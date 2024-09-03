@@ -1,0 +1,94 @@
+@use './styles/reset.scss' as *;
+@use './styles/colors.scss' as *;
+
+body{
+    background-color: var(--primary-color-dark);
+    color: var(--primary-color-light);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    font-family: 'Roboto', sans-serif;
+}
+
+.card{
+   
+    display:    flex;
+    flex-direction: column;
+    row-gap: 24px;
+    background-color: var(--primary-color-medium);
+    border-radius: 4px;
+    max-width: 350px;
+    padding: 24px;
+    &__header{
+        color: var(--neutral-color-white);
+        cursor: pointer;
+
+        &:hover{
+            color: var(--accent-color-neon);
+            transition: all 0.3s;   
+        }
+    }
+
+    &__image{
+        position: relative;
+        height: 302px;
+        background-image: url('./assets/cube.svg');
+        background-size: cover;
+        transition: all 0.3s;
+
+        
+    }
+
+    &__image:hover{
+        background-image: linear-gradient(to bottom, var(--accent-color-neon-opacity-05),var(--accent-color-neon-opacity-05)),url('./assets/cube.svg');
+        border-radius: 7px;
+        
+    }
+
+    &__image:hover > &__image--hovered{
+        opacity: 1;
+
+    }
+
+    &__image--hovered{
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        opacity: 0;
+        transform: translate(-50%, -50%);
+        transition: all 0.3s;
+    }
+
+    
+}
+
+
+.balance{
+    display: flex;
+    justify-content: space-between;
+
+    &__item{
+        display: flex;
+        column-gap: 5px;
+    }
+
+    &__value{
+        color: var(--accent-color-neon);
+    }
+}
+
+
+.footer{
+    border-top: 1px solid var(--primary-color-medium-light);
+    padding-top: 24px;
+    display: flex;
+    justify-content: center;
+
+    &__name{
+        color: var(--neutral-color-white);
+    }
+}
+
+
+

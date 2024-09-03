@@ -1,0 +1,136 @@
+/*
+  1. Use a more-intuitive box-sizing model.
+*/
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+/*
+  2. Remove default margin
+*/
+* {
+  margin: 0;
+}
+
+/*
+  Typographic tweaks!
+  3. Add accessible line-height
+  4. Improve text rendering
+*/
+body {
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+/*
+  5. Improve media defaults
+*/
+img, picture, video, canvas, svg {
+  display: block;
+  max-width: 100%;
+}
+
+/*
+  6. Remove built-in form typography styles
+*/
+input, button, textarea, select {
+  font: inherit;
+}
+
+/*
+  7. Avoid text overflows
+*/
+p, h1, h2, h3, h4, h5, h6 {
+  overflow-wrap: break-word;
+}
+
+/*
+  8. Create a root stacking context
+*/
+#root, #__next {
+  isolation: isolate;
+}
+
+* {
+  --primary-color-dark: #0D192C;
+  --primary-color-medium: #15263F;
+  --primary-color-medium-light: #2E405A;
+  --primary-color-light: #8BACD9;
+  --accent-color-neon: #00FFF8;
+  --accent-color-neon-opacity-05: #00fff75c;
+  --neutral-color-white: #FFFFFF;
+}
+
+body {
+  background-color: var(--primary-color-dark);
+  color: var(--primary-color-light);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  font-family: "Roboto", sans-serif;
+}
+
+.card {
+  display: flex;
+  flex-direction: column;
+  row-gap: 24px;
+  background-color: var(--primary-color-medium);
+  border-radius: 4px;
+  max-width: 350px;
+  padding: 24px;
+}
+.card__header {
+  color: var(--neutral-color-white);
+  cursor: pointer;
+}
+.card__header:hover {
+  color: var(--accent-color-neon);
+  transition: all 0.3s;
+}
+.card__image {
+  position: relative;
+  height: 302px;
+  background-image: url("./assets/cube.svg");
+  background-size: cover;
+  transition: all 0.3s;
+}
+.card__image:hover {
+  background-image: linear-gradient(to bottom, var(--accent-color-neon-opacity-05), var(--accent-color-neon-opacity-05)), url("./assets/cube.svg");
+  border-radius: 7px;
+}
+.card__image:hover > .card__image--hovered {
+  opacity: 1;
+}
+.card__image--hovered {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  opacity: 0;
+  transform: translate(-50%, -50%);
+  transition: all 0.3s;
+}
+
+.balance {
+  display: flex;
+  justify-content: space-between;
+}
+.balance__item {
+  display: flex;
+  column-gap: 5px;
+}
+.balance__value {
+  color: var(--accent-color-neon);
+}
+
+.footer {
+  border-top: 1px solid var(--primary-color-medium-light);
+  padding-top: 24px;
+  display: flex;
+  justify-content: center;
+}
+.footer__name {
+  color: var(--neutral-color-white);
+}
+
+/*# sourceMappingURL=index.css.map */
